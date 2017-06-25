@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+{% for a in albums %}
+<div>
+    <ul>
+        <li>Album Title: {{a.title}}</li>
+        <li>Artist: {{a.artist}}</li>
+        <li>Genre: {{a.genre}}</li>
+    </ul>
+</div>
+{% endfor %}
+
+
+<script>
+
+//var xhr = new XMLHttpRequest();
+//xhr.open('GET', '/movies');
+//xhr.onload = function(evt) {
+//   if (xhr.status === 200) {
+//        alert('Response text: ' + xhr.responseText);
+ //       console.log(xhr.responseText);
+   //     var response = eval(xhr.responseText);
+     //   console.log(response);
+//    } else {
+  //      alert('Request failed.  Returned status of ' + xhr.status);
+    //}
+//};
+//xhr.send();
+</script>
+
+</body>
+</html>

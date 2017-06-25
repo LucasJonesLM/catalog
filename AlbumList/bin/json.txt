@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+		<div id="AlbumList">
+        </div>
+
+<script>
+var xr = new XMLHttpRequest();
+    xr.open('POST', '/gson');
+    xr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xr.onload = function() {
+        if (xr.status === 200) {
+	         var response = JSON.parse(xr.responseText);
+	         var div = document.getElementById('AlbumList');
+	         var content = '';
+	         for (var i in response) {
+	         	var a = response[i];
+	         	content += `
+		         	<div>
+					    <ul>
+					        <li>Album Title: ${a.title}</li>
+					        <li>Artist: ${a.artist}</li>
+					        <li>Genre: ${a.genre}</li>
+					    </ul>
+					</div>
+		        `;
+	         }
+	         div.innerHTML = content;
+	     }
+        
+    };
+    xr.send();
+}
+</script>
+</body>
+</html>
